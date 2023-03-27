@@ -1,0 +1,13 @@
+.card{
+    background-color: #1d3557;
+    color: #a8dadc;
+    text-align: start;
+    margin: auto;
+    width: 50%;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.card>.place {
+    text-align: center;
+}

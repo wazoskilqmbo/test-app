@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios'
+import './index.css'
 
 function App() {
+  const handleClick = async () => {
+    let Name = "abhiraj"
+    let Enrollment_No = 2015090038
+    let Password = "abhirajB"
+
+    await axios.post(`http://localhost:5000/api/v1/students`, {
+      name: Name,
+      enrollment_No: Enrollment_No,
+      password: Password
+    }).then(function(response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button onClick={handleClick}>click me</button>
   );
 }
 
